@@ -16,10 +16,6 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
 ## UI Components
 
 This project uses [shadcn/ui](https://ui.shadcn.com/) components which were bootstrapped with:
@@ -35,4 +31,16 @@ To add new components, use the shadcn CLI:
 ```bash
 npx shadcn@2.3.0 add [component-name]
 ```
+
+## Dependencies
+
+This project uses the following packages:
+
+| Package | Description |
+|---------|-------------|
+| [query-string](https://github.com/sindresorhus/query-string) | Parse and stringify URL query strings |
+| [react-countup](https://github.com/glennreyes/react-countup) | A React component that animates counting from one value to another |
+| [chart.js](https://www.chartjs.org/) | Simple yet flexible JavaScript charting library for creating interactive charts |
+| [react-chartjs-2](https://react-chartjs-2.js.org/) | React components for Chart.js, providing an easy way to use Chart.js in React applications |
+
 
