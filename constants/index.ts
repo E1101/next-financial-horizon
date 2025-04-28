@@ -1,3 +1,5 @@
+// TODO create a routing generator constant and replace the hardcoded strings in the app with the constants
+
 export const sidebarLinks = [
   {
     imgURL: "/icons/home.svg",
