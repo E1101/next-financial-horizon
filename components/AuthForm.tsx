@@ -4,15 +4,15 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Form } from "./ui/form";
 import { Button } from "./ui/button";
 import InputFormField from "./ui/form-field/InputFormField";
 import { Loader2 } from "lucide-react";
 import { signIn, signUp } from "@/lib/actions/user.actions";
-import { Router } from "next/router";
 import { useRouter } from "next/navigation";
+import PlaidLink from "./PlaidLink";
 
 const signUpSchema = z.object({
   email: z
@@ -62,13 +62,28 @@ const AuthForm = ({ type }: { type: "sign-in" | "sign-up" }) => {
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     setIsLoading(true);
 
+    console.log("Form data:", data);
+
     try {
+      const userData = {
+        firstName: data.firstName!,
+        lastName: data.lastName!,
+        address1: data.address1!,
+        city: data.city!,
+        state: data.state!,
+        postalCode: data.postalCode!,
+        dateOfBirth: data.dateOfBirth!,
+        ssn: data.SSN!,
+        email: data.email,
+        password: data.password,
+      };
+
       // Signup with Appwrite & create plaid token
       if (type === "sign-up") {
-        const newUser = await signUp(data);
+        const newUser = await signUp(userData);
         setUser(newUser);
       }
-      
+
       if (type === "sign-in") {
         const { email, password } = data;
         const user = await signIn({ email, password });
@@ -110,7 +125,7 @@ const AuthForm = ({ type }: { type: "sign-in" | "sign-up" }) => {
       </header>
       {user && (
         <div className="flex flex-col gap-4">
-          {/* Plaid connect goes here */}
+          <PlaidLink user={user} variant="primary" />
         </div>
       )}
       {!user && (

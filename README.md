@@ -32,6 +32,14 @@ To add new components, use the shadcn CLI:
 npx shadcn@2.3.0 add [component-name]
 ```
 
+## Monitoring
+
+This project has Sentry monitoring enabled for error tracking and performance monitoring. It was set up with:
+
+```bash
+npx @sentry/wizard@latest -i nextjs --saas --org my-organization-rz --project javascript-nextjs
+```
+
 ## Dependencies
 
 This project uses the following packages:
@@ -42,5 +50,9 @@ This project uses the following packages:
 | [react-countup](https://github.com/glennreyes/react-countup) | A React component that animates counting from one value to another |
 | [chart.js](https://www.chartjs.org/) | Simple yet flexible JavaScript charting library for creating interactive charts |
 | [react-chartjs-2](https://react-chartjs-2.js.org/) | React components for Chart.js, providing an easy way to use Chart.js in React applications |
+| [node-appwrite](https://github.com/appwrite/sdk-for-node) | Appwrite SDK for Node.js to interact with Appwrite backend services |
+| [react-plaid-link](https://github.com/plaid/react-plaid-link) | React component for integrating with Plaid Link |
+| [plaid](https://github.com/plaid/plaid-node) | Node.js client library for the Plaid API |
+| [dwolla-v2](https://github.com/Dwolla/dwolla-v2-node) | Node.js client library for the Dwolla API, enabling payments and transfers |
 
 
