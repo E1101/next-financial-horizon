@@ -45,7 +45,7 @@ const signInSchema = z.object({
 });
 
 const AuthForm = ({ type }: { type: "sign-in" | "sign-up" }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
